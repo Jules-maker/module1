@@ -33,4 +33,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+@font-face {
+  font-family: "LTC Broadway";
+  src: url(../font/LTC-Broadway-Regular.ttf);
+}
+
+body {
+  background-color: #51136e;
+}
+
+div.spinner {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+div.spinner h1 {
+  margin-top: 5%;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-family: "LTC Broadway",Arial, Helvetica, sans-serif;
+  color: #ffa024;
+}
 /*# sourceMappingURL=style.css.map */
