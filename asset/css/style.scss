@@ -166,12 +166,37 @@ div.spinner {
             padding: 1px;
             /* sert à donner reference à l'enfant (enlever et ajouter margin a l'enfant pour comprendre */
             & > div {
+                position: relative;
                 width: 50%;
                 height: 50%;
                 background-color: #ffff;
                 border-radius: 50%;
                 margin: 18% auto 0;
                 border: 8px solid #000; /* prop de border : width style color */
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 27px;
+                    width: 10px;
+                    background-color: #ffff;
+                    border-radius: 49% 118% 26% 28%;
+                    top: 1px;
+                    left: -6px;
+                    transform: rotate(211deg);
+                }
+                
+                
+                
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 27px;
+                    width: 12px;
+                    background-color: #ffff;
+                    border-radius: 118% 49% 28% 26%;
+                    top: 6px;
+                    left: -8px;
+                }
             }
         }
     }
