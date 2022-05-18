@@ -136,68 +136,21 @@ table {
 // Perso
 body {
     background-color: rgb(81, 19, 110);
-}
-div.spinner {
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    background-color: rgb(13, 83, 83);
-
     h1 {
-        margin-top: 5%;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 2.5em;
         text-transform: uppercase;
         font-family: "LTC Broadway", Arial, Helvetica, sans-serif;
         color: #ffa024;
     }
-    .spinner-box {
-        width: 200px;
-        height: 200px;
-        margin: 5% auto 0;
-        background-color: #ffff;
-        padding: 1px;
-
-        & > div {
-            width: 50%;
-            height: 50%;
-            border-radius: 50%;
-            margin: 25% auto;
-            background-color: #1b6aac;
-            padding: 1px;
-            /* sert à donner reference à l'enfant (enlever et ajouter margin a l'enfant pour comprendre */
-            & > div {
-                position: relative;
-                width: 50%;
-                height: 50%;
-                background-color: #ffff;
-                border-radius: 50%;
-                margin: 18% auto 0;
-                border: 8px solid #000; /* prop de border : width style color */
-                &::before {
-                    content: "";
-                    position: absolute;
-                    height: 27px;
-                    width: 10px;
-                    background-color: #ffff;
-                    border-radius: 49% 118% 26% 28%;
-                    top: 1px;
-                    left: -6px;
-                    transform: rotate(211deg);
-                }
-                
-                
-                
-                &::after {
-                    content: "";
-                    position: absolute;
-                    height: 27px;
-                    width: 12px;
-                    background-color: #ffff;
-                    border-radius: 118% 49% 28% 26%;
-                    top: 6px;
-                    left: -8px;
-                }
-            }
-        }
-    }
+}
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    margin: 8% auto;
+    background-color: #ffff;
+    
 }
