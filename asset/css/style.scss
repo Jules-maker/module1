@@ -148,9 +148,37 @@ body {
     }
 }
 .spinner-box {
+    display: flex;
     width: 300px;
     height: 300px;
     margin: 8% auto;
     background-color: #ffff;
-    
+    display: grid;
+    place-items: center;
+    .spinner {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(42, 173, 233);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px -5px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        position: relative;
+        display: grid;
+        place-items: center;
+        padding: 1px;
+
+        span {
+            z-index: 5;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: #ffa024;
+            
+        }
+        // &::after
+
+    }
 }
