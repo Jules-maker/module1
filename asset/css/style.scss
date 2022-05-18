@@ -133,52 +133,82 @@ table {
     font-family: "LTC Broadway";
     src: url(../font/LTC-Broadway-Regular.ttf);
 }
+// Variables
+$duration : 1300ms;
+$primarycolor: #10002b;
+$text : #e0aaff;
+
 // Perso
 body {
-    background-color: rgb(81, 19, 110);
+    background-color: $primarycolor;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2em;
     h1 {
-        position: absolute;
-        top: 5%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         font-size: 2.5em;
         text-transform: uppercase;
         font-family: "LTC Broadway", Arial, Helvetica, sans-serif;
-        color: #ffa024;
+        color: $text;
     }
 }
 .spinner-box {
-    display: flex;
     width: 300px;
     height: 300px;
     margin: 8% auto;
-    background-color: #ffff;
+    background-color: $primarycolor;
     display: grid;
     place-items: center;
+
     .spinner {
         width: 200px;
         height: 200px;
-        background-color: rgb(42, 173, 233);
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px -5px 20px rgba(0, 0, 0, 0.3);
+        background-color: $primarycolor;
         border-radius: 50%;
         position: relative;
         display: grid;
         place-items: center;
         padding: 1px;
-
-        span {
-            z-index: 5;
-        }
+        background-image: conic-gradient(#7b2cbf 90%, transparent 0);
+        animation: spin $duration linear infinite;
         &::before {
             content: "";
             position: absolute;
             width: 80%;
             height: 80%;
             border-radius: 50%;
-            background-color: #ffa024;
-            
+            background-color: $primarycolor;
         }
-        // &::after
-
+        &::after {
+            content: "Loading";
+            position: absolute;
+            font-family: "LTC Broadway", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            color: $text;
+            display: block;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            animation: anti-spin $duration linear infinite;
+        }
     }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+@keyframes anti-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+
 }
