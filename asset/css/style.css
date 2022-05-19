@@ -156,17 +156,17 @@ body h1 {
   color: #e0aaff;
 }
 
-.spinner-box {
+.box {
   width: 300px;
   height: 300px;
-  margin: 8% auto;
+  margin: 4% auto;
   background-color: #10002b;
   display: -ms-grid;
   display: grid;
   place-items: center;
 }
 
-.spinner-box .spinner {
+.box .spinner {
   width: 200px;
   height: 200px;
   background-color: #10002b;
@@ -181,16 +181,16 @@ body h1 {
           animation: spin 1300ms linear infinite;
 }
 
-.spinner-box .spinner::before {
+.box .spinner::before {
   content: "";
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 85%;
+  height: 85%;
   border-radius: 50%;
   background-color: #10002b;
 }
 
-.spinner-box .spinner::after {
+.box .spinner::after {
   content: "Loading";
   position: absolute;
   font-family: "LTC Broadway", Arial, Helvetica, sans-serif;
@@ -203,6 +203,40 @@ body h1 {
      object-fit: contain;
   -webkit-animation: anti-spin 1300ms linear infinite;
           animation: anti-spin 1300ms linear infinite;
+}
+
+.box .spinner_border {
+  width: 200px;
+  height: 200px;
+  background-color: #e5b3fe;
+  border-radius: 50%;
+  border: 1.2em solid #160f29;
+  border-top: 1.2em inset #bfd1e5;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-animation: spin 1300ms linear infinite;
+          animation: spin 1300ms linear infinite;
+}
+
+.box .spinner_border::before {
+  content: "Loading";
+  position: absolute;
+  font-family: "LTC Broadway", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #bb44ff;
+  display: block;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-animation: anti-spin 1300ms linear infinite;
+          animation: anti-spin 1300ms linear infinite;
+}
+
+.box-visible {
+  background-color: #e5b3fe;
 }
 
 @-webkit-keyframes spin {

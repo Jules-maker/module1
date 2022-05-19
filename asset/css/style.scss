@@ -134,9 +134,12 @@ table {
     src: url(../font/LTC-Broadway-Regular.ttf);
 }
 // Variables
-$duration : 1300ms;
+// https://coolors.co/palette/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff
+$duration: 1300ms;
 $primarycolor: #10002b;
-$text : #e0aaff;
+$secondarycolor: #caff8a;
+$box-visible: #e5b3fe;
+$text: #e0aaff;
 
 // Perso
 body {
@@ -152,10 +155,10 @@ body {
         color: $text;
     }
 }
-.spinner-box {
+.box {
     width: 300px;
     height: 300px;
-    margin: 8% auto;
+    margin: 4% auto;
     background-color: $primarycolor;
     display: grid;
     place-items: center;
@@ -174,8 +177,8 @@ body {
         &::before {
             content: "";
             position: absolute;
-            width: 80%;
-            height: 80%;
+            width: 85%;
+            height: 85%;
             border-radius: 50%;
             background-color: $primarycolor;
         }
@@ -192,6 +195,35 @@ body {
             animation: anti-spin $duration linear infinite;
         }
     }
+    .spinner_border {
+        width: 200px;
+        height: 200px;
+        background-color: $box-visible;
+        border-radius: 50%;
+        border: 1.2em solid #160f29;
+        border-top: 1.2em inset #bfd1e5;
+        position: relative;
+        display: grid;
+        place-items: center;
+        // #160F29 pour bordertop
+        animation: spin $duration linear infinite;
+        &::before {
+            content: "Loading";
+            position: absolute;
+            font-family: "LTC Broadway", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            color: darken($text , 20%);
+            display: block;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            animation: anti-spin $duration linear infinite;
+
+        }
+    }
+}
+.box-visible {
+    background-color: $box-visible;
 }
 
 @keyframes spin {
@@ -201,7 +233,6 @@ body {
     to {
         transform: rotate(360deg);
     }
-
 }
 @keyframes anti-spin {
     from {
@@ -210,5 +241,4 @@ body {
     to {
         transform: rotate(-360deg);
     }
-
 }
